@@ -1,0 +1,12 @@
+diff --git a/src/util.js b/src/util.js
+index bb038ef..7013393 100644
+--- a/src/util.js
++++ b/src/util.js
+@@ -145,7 +145,6 @@ export function makeDropdownFlat(dropdown) {
+ export function buildRuntimePath(...args) {
+   return GLib.build_filenamev([
+     GLib.get_user_runtime_dir(),
+-    getFlatpakId(),
+     ...args,
+   ]);
+ }

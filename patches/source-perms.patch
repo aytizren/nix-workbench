@@ -1,0 +1,15 @@
+# Copied from
+# https://github.com/workbenchdev/Workbench/pull/188
+diff --git a/src/langs/vala/vala.js b/src/langs/vala/vala.js
+index 319a98d..eb37a2f 100644
+--- a/src/langs/vala/vala.js
++++ b/src/langs/vala/vala.js
+@@ -14,7 +14,7 @@ export function setup({ document }) {
+   );
+   api_file.copy(
+     file.get_parent().get_child("workbench.vala"),
+-    Gio.FileCopyFlags.OVERWRITE,
++    Gio.FileCopyFlags.OVERWRITE | Gio.FileCopyFlags.TARGET_DEFAULT_PERMS,
+     null,
+     null,
+   );
