@@ -58,7 +58,7 @@
       -i $out/bin/re.sonny.Workbench
     gappsWrapperArgs+=(
       --prefix PATH : $out/bin
-      --prefix PATH : "${lib.makeBinPath [biome blueprint-compiler glib gtk-css-lsp python312Packages.python-lsp-server]}"
+      --prefix PATH : "${lib.makeBinPath [biome blueprint-compiler glib.dev gtk-css-lsp python312Packages.python-lsp-server]}"
     )
   '';
 
