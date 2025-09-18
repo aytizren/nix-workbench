@@ -1,5 +1,7 @@
 This is a nix flake for [GNOME Workbench](https://github.com/workbenchdev/Workbench). Credits to both the developers of Workbench and those involved at NixOS/nixpkgs#208866
 
+> [!WARNING]
+> This flake has not been tested. See note at bottom for more information
 
 # Usage
 This nix flake exposes two packages. The first is, well, workbench and can be accessed with either `packages.x86_64-linux.default` or `packages.x86_64-linux.workbench`. The second is `gtk-css-lsp`, which is a dependency of workbench that is not available in nixpkgs. The code for that derivation belongs to a contributor to the Nix User Repository.
@@ -90,7 +92,7 @@ nix.settings = {
 </details>
 
 # This has not been rigorously tested
-This flake has not be tested with workflows involving any programming language, nor even CSS for that matter. I personally only use it for quick iteration with blueprint, and have not got around to testing other workflows.
+This flake has not be tested with workflows involving any programming language, nor even CSS or Blueprint for that matter. 
 
 # TODO:
 Test this
