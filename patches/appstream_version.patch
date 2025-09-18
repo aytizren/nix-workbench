@@ -7,7 +7,7 @@ index 6705a4c..ab97e29 100644
    <content_rating type="oars-1.1" />
    <releases>
 -    <release version="48.0" date="2025-04-xx">
-+    <release version="48.0" date="2025-04-18">
++    <release version="48.0" date="2025-07-6">
        <description translatable="no">
          <ul>
            <li>Use GNOME 48</li>

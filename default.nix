@@ -26,7 +26,7 @@
   wrapGAppsHook4,
 }: stdenv.mkDerivation {
   pname = "workbench";
-  version = "48.0-dev";
+  version = "47.1-unstable-2025-07-6";
 
   src = fetchFromGitHub {
     owner = "workbenchdev";
