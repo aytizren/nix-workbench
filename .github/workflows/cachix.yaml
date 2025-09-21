@@ -16,24 +16,19 @@ jobs:
         extra_nix_config: |
           download-buffer-size = 500000000
 
-    - name: Configure Cachix
-      uses: cachix/cachix-action@v16
-      with:
-        name: nix-workbench
-        authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
-
     - name: Build Nix derivations
       id: build
       run: >
         paths=$(nix build \
+          --no-link \
           --print-out-paths \
           --no-accept-flake-config \
           .#gtk-css-lsp .#workbench)
         echo "OUT_PATHS=$paths" >> $GITHUB_OUTPUT
 
-    - name: Cache results
-      uses: ./
+    - name: Configure and push to Cachix
+      uses: cachix/cachix-action@v16
       with:
-        name: cachix-action
-        signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
-        pathsToPush: "${{ steps.paths.outputs.OUT_PATHS }}"
+        name: nix-workbench
+        authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+        pathsToPush: "${{ steps.build.outputs.OUT_PATHS }}"
